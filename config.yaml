@@ -1,115 +1,90 @@
-# Project definitions (do not edit)
+SuperAnimalConversionTables: null
 Task: OCNC_DLC_BEH
-scorer: MANUELA
-date: Jul3
-multianimalproject: false
-identity:
-
-
-# Project path (change when moving around)
-project_path: 
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03
-
-
-# Default DeepLabCut engine to use for shuffle creation (either pytorch or tensorflow)
-engine: pytorch
-
-
-# Annotation data set configuration (and individual video cropping parameters)
-video_sets:
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/986_D_s1_rm_12_4kHz.mp4:
-    crop: 0, 640, 0, 426
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1023_F_s1_rm_7_4kHz.mp4:
-    crop: 0, 640, 0, 426
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/953_D_s2_rm_7_4kHz.mp4:
-    crop: 0, 640, 0, 426
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1040_F_s2_rp_12_4kHz.mp4:
-    crop: 0, 640, 0, 426
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1031_B_s3_rp_7_4kHz.mp4:
-    crop: 0, 640, 0, 426
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/990_B_s3_rm_12_4kHz.mp4:
-    crop: 0, 640, 0, 426
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1032_F_s4_rp_7_4kHz.mp4:
-    crop: 0, 640, 0, 426
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1020_C_s4_rm_7_4kHz.mp4:
-    crop: 0, 640, 0, 426
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/988_A_s5_rp_12_4kHz.mp4:
-    crop: 0, 640, 0, 426
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/935_B_s5_rm_7_4kHz.mp4:
-    crop: 0, 640, 0, 426
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1012_B_s6_rm_7_4kHz.mp4:
-    crop: 0, 640, 0, 426
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1002_B_s6_rp_12_4kHz.mp4:
-    crop: 0, 640, 0, 426
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/971_E_s7_rp_12_4kHz.mp4:
-    crop: 0, 640, 0, 426
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/953_D_s7_rm_7_4kHz.mp4:
-    crop: 0, 640, 0, 426
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/971_E_s8_rp_12_4kHz.mp4:
-    crop: 0, 640, 0, 426
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/974_C_s8_rm_7_4kHz.mp4:
-    crop: 0, 640, 0, 426
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/955_F_s9_rp_12_4kHz.mp4:
-    crop: 0, 640, 0, 426
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/942_D_s9_rp_7_4kHz.mp4:
-    crop: 0, 640, 0, 426
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1020_C_s10_rm_7_4kHz.mp4:
-    crop: 0, 640, 0, 426
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1002_B_s10_rp_12_4kHz.mp4:
-    crop: 0, 640, 0, 426
+TrainingFraction:
+- 0.95
+alphavalue: 0.7
+batch_size: 8
 bodyparts:
 - bodypart1
 - bodypart2
 - bodypart3
 - objectA
-
-
-# Fraction of video to start/stop when extracting frames for labeling/refinement
-start: 0
-stop: 1
+colormap: rainbow
+corner2move2:
+- 50
+- 50
+crop:
+- 152
+- 482
+- 150
+- 482
+cropping: true
+date: Jul3
+default_augmenter: default
+default_net_type: resnet_50
+detector_batch_size: 1
+detector_snapshotindex: -1
+dotsize: 12
+engine: pytorch
+identity: null
+iteration: 0
+move2corner: true
+multianimalproject: false
 numframes2pick: 20
-
-
-# Plotting configuration
+pcutoff: 0.6
+project_path: /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03
+scorer: MANUELA
 skeleton:
 - - bodypart1
   - bodypart2
 - - objectA
   - bodypart3
 skeleton_color: black
-pcutoff: 0.6
-dotsize: 12
-alphavalue: 0.7
-colormap: rainbow
-
-
-# Training,Evaluation and Analysis configuration
-TrainingFraction:
-- 0.95
-iteration: 0
-default_net_type: resnet_50
-default_augmenter: default
 snapshotindex: -1
-detector_snapshotindex: -1
-batch_size: 8
-detector_batch_size: 1
-
-
-# Cropping Parameters (for analysis and outlier frame detection)
-cropping: false
-#if cropping is true for analysis, then set the values here:
+start: 0
+stop: 1
+video_sets:
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1002_B_s10_rp_12_4kHz.mp4:
+    crop: 0, 640, 0, 426
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1002_B_s6_rp_12_4kHz.mp4:
+    crop: 0, 640, 0, 426
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1012_B_s6_rm_7_4kHz.mp4:
+    crop: 0, 640, 0, 426
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1020_C_s10_rm_7_4kHz.mp4:
+    crop: 0, 640, 0, 426
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1020_C_s4_rm_7_4kHz.mp4:
+    crop: 0, 640, 0, 426
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1023_F_s1_rm_7_4kHz.mp4:
+    crop: 0, 640, 0, 426
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1031_B_s3_rp_7_4kHz.mp4:
+    crop: 0, 640, 0, 426
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1032_F_s4_rp_7_4kHz.mp4:
+    crop: 0, 640, 0, 426
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1040_F_s2_rp_12_4kHz.mp4:
+    crop: 0, 640, 0, 426
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/935_B_s5_rm_7_4kHz.mp4:
+    crop: 0, 640, 0, 426
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/942_D_s9_rp_7_4kHz.mp4:
+    crop: 0, 640, 0, 426
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/953_D_s2_rm_7_4kHz.mp4:
+    crop: 0, 640, 0, 426
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/953_D_s7_rm_7_4kHz.mp4:
+    crop: 0, 640, 0, 426
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/955_F_s9_rp_12_4kHz.mp4:
+    crop: 0, 640, 0, 426
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/971_E_s7_rp_12_4kHz.mp4:
+    crop: 0, 640, 0, 426
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/971_E_s8_rp_12_4kHz.mp4:
+    crop: 0, 640, 0, 426
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/974_C_s8_rm_7_4kHz.mp4:
+    crop: 0, 640, 0, 426
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/986_D_s1_rm_12_4kHz.mp4:
+    crop: 0, 640, 0, 426
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/988_A_s5_rp_12_4kHz.mp4:
+    crop: 0, 640, 0, 426
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/990_B_s3_rm_12_4kHz.mp4:
+    crop: 0, 640, 0, 426
 x1: 0
 x2: 640
 y1: 277
 y2: 624
-
-
-# Refinement configuration (parameters from annotation dataset configuration also relevant in this stage)
-corner2move2:
-- 50
-- 50
-move2corner: true
-
-
-# Conversion tables to fine-tune SuperAnimal weights
-SuperAnimalConversionTables:
