@@ -5,10 +5,18 @@ TrainingFraction:
 alphavalue: 0.7
 batch_size: 8
 bodyparts:
-- bodypart1
-- bodypart2
-- bodypart3
-- objectA
+- 1_SNOUT
+- 2_LEFT_EAR
+- 3_RIGHT_EAR
+- 4_NECK
+- 5_LEFT_SHOULDER
+- 6_RIGHT_SHOULDER
+- 7_LEFT_HIP
+- 8_RIGHT_HIP
+- 9_TAIL_BASE
+- 10_TAIL_FIRST_THIRD
+- 11_TAIL_SECOND_THIRD
+- 12_TAIL_END
 colormap: rainbow
 corner2move2:
 - 50
@@ -35,36 +43,152 @@ pcutoff: 0.6
 project_path: /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03
 scorer: MANUELA
 skeleton:
-- - bodypart1
-  - bodypart2
-- - objectA
-  - bodypart3
+- - 1_SNOUT
+  - 2_LEFT_EAR
+- - 1_SNOUT
+  - 3_RIGHT_EAR
+- - 1_SNOUT
+  - 4_NECK
+- - 4_NECK
+  - 5_LEFT_SHOULDER
+- - 4_NECK
+  - 6_RIGHT_SHOULDER
+- - 5_LEFT_SHOULDER
+  - 7_LEFT_HIP
+- - 6_RIGHT_SHOULDER
+  - 8_RIGHT_HIP
+- - 7_LEFT_HIP
+  - 9_TAIL_BASE
+- - 8_RIGHT_HIP
+  - 9_TAIL_BASE
+- - 9_TAIL_BASE
+  - 10_TAIL_FIRST_THIRD
+- - 10_TAIL_FIRST_THIRD
+  - 11_TAIL_SECOND_THIRD
+- - 11_TAIL_SECOND_THIRD
+  - 12_TAIL_END
 skeleton_color: black
 snapshotindex: -1
 start: 0
 stop: 1
 video_sets:
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1002_B_s10_rp_12_4kHz.mp4: {}
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1002_B_s6_rp_12_4kHz.mp4: {}
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1012_B_s6_rm_7_4kHz.mp4: {}
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1020_C_s10_rm_7_4kHz.mp4: {}
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1020_C_s4_rm_7_4kHz.mp4: {}
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1023_F_s1_rm_7_4kHz.mp4: {}
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1031_B_s3_rp_7_4kHz.mp4: {}
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1032_F_s4_rp_7_4kHz.mp4: {}
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1040_F_s2_rp_12_4kHz.mp4: {}
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/935_B_s5_rm_7_4kHz.mp4: {}
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/942_D_s9_rp_7_4kHz.mp4: {}
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/953_D_s2_rm_7_4kHz.mp4: {}
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/953_D_s7_rm_7_4kHz.mp4: {}
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/955_F_s9_rp_12_4kHz.mp4: {}
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/971_E_s7_rp_12_4kHz.mp4: {}
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/971_E_s8_rp_12_4kHz.mp4: {}
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/974_C_s8_rm_7_4kHz.mp4: {}
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/986_D_s1_rm_12_4kHz.mp4: {}
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/988_A_s5_rp_12_4kHz.mp4: {}
-  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/990_B_s3_rm_12_4kHz.mp4: {}
-x1: 0
-x2: 640
-y1: 277
-y2: 624
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1002_B_s10_rp_12_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1002_B_s6_rp_12_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1012_B_s6_rm_7_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1020_C_s10_rm_7_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1020_C_s4_rm_7_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1023_F_s1_rm_7_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1031_B_s3_rp_7_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1032_F_s4_rp_7_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/1040_F_s2_rp_12_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/935_B_s5_rm_7_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/942_D_s9_rp_7_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/953_D_s2_rm_7_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/953_D_s7_rm_7_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/955_F_s9_rp_12_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/971_E_s7_rp_12_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/971_E_s8_rp_12_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/974_C_s8_rm_7_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/986_D_s1_rm_12_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/988_A_s5_rp_12_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
+  /home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/videos/990_B_s3_rm_12_4kHz.mp4:
+    crop:
+    - 152
+    - 482
+    - 150
+    - 482
