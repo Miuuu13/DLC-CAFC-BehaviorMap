@@ -154,10 +154,82 @@ import yaml
 
 
 #%%
+# import yaml
+
+# def update_config_yaml(config_path: str):
+#     # Custom bodypart names
+#     new_bodyparts = [
+#         "1_SNOUT",
+#         "2_LEFT_EAR",
+#         "3_RIGHT_EAR",
+#         "4_NECK",
+#         "5_LEFT_SHOULDER",
+#         "6_RIGHT_SHOULDER",
+#         "7_LEFT_HIP",
+#         "8_RIGHT_HIP",
+#         "9_TAIL_BASE",
+#         "10_TAIL_FIRST_THIRD",
+#         "11_TAIL_SECOND_THIRD",
+#         "12_TAIL_END"
+#     ]
+
+#     # Skeleton connections in top-down view
+#     new_skeleton = [
+#         ["1_SNOUT", "2_LEFT_EAR"],
+#         ["1_SNOUT", "3_RIGHT_EAR"],
+#         ["1_SNOUT", "4_NECK"],
+#         ["4_NECK", "5_LEFT_SHOULDER"],
+#         ["4_NECK", "6_RIGHT_SHOULDER"],
+#         ["5_LEFT_SHOULDER", "7_LEFT_HIP"],
+#         ["6_RIGHT_SHOULDER", "8_RIGHT_HIP"],
+#         ["7_LEFT_HIP", "9_TAIL_BASE"],
+#         ["8_RIGHT_HIP", "9_TAIL_BASE"],
+#         ["9_TAIL_BASE", "10_TAIL_FIRST_THIRD"],
+#         ["10_TAIL_FIRST_THIRD", "11_TAIL_SECOND_THIRD"],
+#         ["11_TAIL_SECOND_THIRD", "12_TAIL_END"]
+#     ]
+
+#     # Load the config.yaml
+#     with open(config_path, "r") as f:
+#         config = yaml.safe_load(f)
+
+#     # Update bodyparts and skeleton
+#     config["bodyparts"] = new_bodyparts
+#     config["skeleton"] = new_skeleton
+
+#     # Remove deprecated fields if they exist
+#     for k in ["x1", "x2", "y1", "y2"]:
+#         config.pop(k, None)
+
+#     # Apply cropping info to each video
+#     for video_path in config.get("video_sets", {}):
+#         config["video_sets"][video_path]["crop"] = [152, 482, 150, 482]
+
+#     # Save the updated config
+#     with open(config_path, "w") as f:
+#         yaml.dump(config, f, default_flow_style=False)
+
+#     print(f"✔ config.yaml updated successfully at: {config_path}")
+# # Example usage:
+#only run if update needed:
+#update_config_yaml("/home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/config.yaml")
+
+
+#%%
+
+""" decided to use MID BODY: """
+
 import yaml
 
 def update_config_yaml(config_path: str):
-    # Custom bodypart names
+    """
+    Update config.yaml with modified bodyparts and skeleton structure:
+    - Add 7_MID_BODY
+    - Remove 10_TAIL_FIRST_THIRD
+    - Rename 11_TAIL_SECOND_THIRD to 11_TAIL_MID
+    - Adjust indices and skeleton connections
+    """
+
     new_bodyparts = [
         "1_SNOUT",
         "2_LEFT_EAR",
@@ -165,54 +237,45 @@ def update_config_yaml(config_path: str):
         "4_NECK",
         "5_LEFT_SHOULDER",
         "6_RIGHT_SHOULDER",
-        "7_LEFT_HIP",
-        "8_RIGHT_HIP",
-        "9_TAIL_BASE",
-        "10_TAIL_FIRST_THIRD",
-        "11_TAIL_SECOND_THIRD",
+        "7_MID_BODY",
+        "8_LEFT_HIP",
+        "9_RIGHT_HIP",
+        "10_TAIL_BASE",
+        "11_TAIL_MID",
         "12_TAIL_END"
     ]
 
-    # Skeleton connections in top-down view
     new_skeleton = [
         ["1_SNOUT", "2_LEFT_EAR"],
         ["1_SNOUT", "3_RIGHT_EAR"],
         ["1_SNOUT", "4_NECK"],
         ["4_NECK", "5_LEFT_SHOULDER"],
         ["4_NECK", "6_RIGHT_SHOULDER"],
-        ["5_LEFT_SHOULDER", "7_LEFT_HIP"],
-        ["6_RIGHT_SHOULDER", "8_RIGHT_HIP"],
-        ["7_LEFT_HIP", "9_TAIL_BASE"],
-        ["8_RIGHT_HIP", "9_TAIL_BASE"],
-        ["9_TAIL_BASE", "10_TAIL_FIRST_THIRD"],
-        ["10_TAIL_FIRST_THIRD", "11_TAIL_SECOND_THIRD"],
-        ["11_TAIL_SECOND_THIRD", "12_TAIL_END"]
+        ["5_LEFT_SHOULDER", "8_LEFT_HIP"],
+        ["6_RIGHT_SHOULDER", "9_RIGHT_HIP"],
+        ["5_LEFT_SHOULDER", "7_MID_BODY"],
+        ["6_RIGHT_SHOULDER", "7_MID_BODY"],
+        ["7_MID_BODY", "10_TAIL_BASE"],
+        ["10_TAIL_BASE", "11_TAIL_MID"],
+        ["11_TAIL_MID", "12_TAIL_END"]
     ]
 
-    # Load the config.yaml
+    # Load and update config.yaml
     with open(config_path, "r") as f:
         config = yaml.safe_load(f)
 
-    # Update bodyparts and skeleton
     config["bodyparts"] = new_bodyparts
     config["skeleton"] = new_skeleton
 
-    # Remove deprecated fields if they exist
-    for k in ["x1", "x2", "y1", "y2"]:
-        config.pop(k, None)
-
-    # Apply cropping info to each video
-    for video_path in config.get("video_sets", {}):
-        config["video_sets"][video_path]["crop"] = [152, 482, 150, 482]
-
-    # Save the updated config
+    # Save updated config.yaml
     with open(config_path, "w") as f:
         yaml.dump(config, f, default_flow_style=False)
 
-    print(f"✔ config.yaml updated successfully at: {config_path}")
-# Example usage:
-#only run if update needed:
-#update_config_yaml("/home/manuela/Videos/OCNC_Project_DLC_BEH_2025JUL03/OCNC_DLC_BEH-MANUELA-2025-07-03/config.yaml")
+    print(f"✔ config.yaml updated with new bodyparts and skeleton at: {config_path}")
+
+#%%
+
+#update_config_yaml("OCNC_DLC_BEH-MANUELA-2025-07-03/config.yaml")
 
 
 
@@ -441,12 +504,12 @@ def update_config_with_crop_json(config_path: str, json_path: str):
             config["video_sets"][video_path]["crop"] = crop_str
             updated += 1
         else:
-            print(f"⚠ Skipped (not in config): {video_path}")
+            print(f"Skipped (not in config): {video_path}")
 
     with open(config_path, 'w') as f:
         yaml.dump(config, f, default_flow_style=False)
 
-    print(f"✔ Updated {updated} video entries with crop values in {os.path.basename(config_path)}.")
+    print(f"Updated {updated} video entries with crop values in {os.path.basename(config_path)}.")
 
 update_config_with_crop_json(config_path, json_path)
 
@@ -456,13 +519,16 @@ update_config_with_crop_json(config_path, json_path)
 #%%
 CONFIG_PATH = "OCNC_DLC_BEH-MANUELA-2025-07-03/config.yaml"
 #%%
-dlc.extract_frames(
-    CONFIG_PATH,
-    mode='automatic',
-    algo='kmeans', #uniform is default?
-    userfeedback=False,
-    crop=True #True  # <-- this enforces the crop during extraction
-)
+
+"""Extraction already done"""
+
+# dlc.extract_frames(
+#     CONFIG_PATH,
+#     mode='automatic',
+#     algo='kmeans', #uniform is default?
+#     userfeedback=False,
+#     crop=True #True  # <-- this enforces the crop during extraction
+# )
 
 #TODO care about crop later
 
@@ -471,13 +537,128 @@ dlc.extract_frames(
 
 dlc.label_frames(CONFIG_PATH)
 
+#%%
+#TODO label all videos 
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="955_F_s9_rp_12_4kHz")
 
 
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="labeled-data/1002_B_s6_rp_12_4kHz") #done 
 
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="labeled-data/1012_B_s6_rm_7_4kHz")
+
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="labeled-data/1020_C_s10_rm_7_4kHz")
+
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="labeled-data/953_D_s7_rm_7_4kHz")
+
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="labeled-data/990_B_s3_rm_12_4kHz")
+
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="labeled-data/971_E_s7_rp_12_4kHz")
+
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="labeled-data/1032_F_s4_rp_7_4kHz")
+
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="labeled-data/1002_B_s10_rp_12_4kHz")
+
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="labeled-data/935_B_s5_rm_7_4kHz")
+
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="labeled-data/1031_B_s3_rp_7_4kHz")
+
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="labeled-data/942_D_s9_rp_7_4kHz")
+
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="labeled-data/971_E_s8_rp_12_4kHz")
+
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="labeled-data/986_D_s1_rm_12_4kHz")
+
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="labeled-data/1020_C_s4_rm_7_4kHz")
+
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="labeled-data/953_D_s2_rm_7_4kHz")
+
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="labeled-data/988_A_s5_rp_12_4kHz")
+
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="labeled-data/1040_F_s2_rp_12_4kHz")
+
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="labeled-data/1023_F_s1_rm_7_4kHz")
+
+#%%
+dlc.label_frames(CONFIG_PATH, image_folder="labeled-data/974_C_s8_rm_7_4kHz")
 
 
 
 #%%
+
+#keeps opening same video to label
+
+import os
+
+project_path = os.path.dirname(CONFIG_PATH)
+labeled_data_path = os.path.join(project_path, "labeled-data")
+
+print("Folders in labeled-data:")
+print(os.listdir(labeled_data_path))
+
+#%%
+
+
+
+######################################LABEL FRAMES !!! ########################
+
+#%%
+
+import os
+import shutil
+import glob
+
+def reset_labeling_after_bodypart_change(config_path: str):
+    """
+    Cleans labeled-data and old label files so you can re-label with updated bodyparts.
+    """
+    project_dir = os.path.dirname(config_path)
+    labeled_data_path = os.path.join(project_dir, "labeled-data")
+
+    # 1. Delete labeled-data folders
+    if os.path.exists(labeled_data_path):
+        for folder in os.listdir(labeled_data_path):
+            full_path = os.path.join(labeled_data_path, folder)
+            if os.path.isdir(full_path):
+                shutil.rmtree(full_path)
+        print("Deleted all labeled-data folders.")
+
+    # 2. Delete any old .h5/.csv/.pickle files from labeling
+    pattern_extensions = ["*.csv", "*.h5", "*.pickle"]
+    for ext in pattern_extensions:
+        for file in glob.glob(os.path.join(project_dir, ext)):
+            os.remove(file)
+            print(f"🧽 Removed old label file: {os.path.basename(file)}")
+
+    print("Cleared old labels. You can now re-run dlc.label_frames() safely.")
+
+
+
+#%%
+#reset_labeling_after_bodypart_change("OCNC_DLC_BEH-MANUELA-2025-07-03/config.yaml")
+
+
+#%%
+# 
+dlc.label_frames("OCNC_DLC_BEH-MANUELA-2025-07-03/config.yaml")
 
 
 #%% CHECK ASSIGNMENT
